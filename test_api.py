@@ -1,7 +1,10 @@
 import os
+import time
+import csv
 from openai import OpenAI
 from dotenv import load_dotenv
 import json
+import pandas as pd
 
 load_dotenv()  # This magically loads your secret key from the .env file
 
@@ -46,3 +49,5 @@ except:
     print(text)
 
 print("\n✅ Day 1 API setup complete! You can now talk to an LLM from Python.")
+
+

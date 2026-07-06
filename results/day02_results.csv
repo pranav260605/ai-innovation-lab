@@ -1,0 +1,5 @@
+Model,Latency(ms),Tokens,Sentiment,Confidence,Reason,JSON_OK
+Llama-70B,2648,171,neutral,0.7,"The review mentions both a negative aspect (damaged packaging) and a positive aspect (the item works perfectly), resulting in a neutral overall sentiment.",✓
+Llama-8B,320,157,positive,0.8,"The customer is generally satisfied with the product's performance, despite some issues with the packaging.",✓
+Qwen-3-32B,2215,381,positive,0.7,"The customer acknowledges the product works perfectly despite the damaged packaging, indicating overall satisfaction.",✓
+DeepSeek-V4,12854,188,positive,0.8,"The product works perfectly, which outweighs the minor issue of damaged packaging.",✓
