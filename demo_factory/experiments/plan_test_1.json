@@ -1,0 +1,17 @@
+{
+  "task_type": "classification",
+  "models_to_test": [
+    "llama-70b",
+    "qwen-32b",
+    "llama-8b"
+  ],
+  "suggested_prompt": "Classify the following customer support email as urgent or not: {{input}}",
+  "metrics": [
+    "accuracy",
+    "latency_ms"
+  ],
+  "n_samples": 20,
+  "rationale": "I chose llama-70b for high accuracy, qwen-32b for detailed explanations, and llama-8b for speed, with accuracy and latency metrics to evaluate their performance on this classification task.",
+  "problem_statement": "Can AI classify whether customer support emails are urgent or not?",
+  "model_used_for_planning": "llama-3.3-70b-versatile"
+}

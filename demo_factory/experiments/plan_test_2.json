@@ -1,0 +1,18 @@
+{
+  "task_type": "extraction",
+  "models_to_test": [
+    "llama-70b",
+    "qwen-32b",
+    "llama-8b"
+  ],
+  "suggested_prompt": "Extract the payment terms from the following supplier contract: {{input}}",
+  "metrics": [
+    "accuracy",
+    "latency_ms",
+    "json_valid"
+  ],
+  "n_samples": 20,
+  "rationale": "I chose extraction as the task type and selected models with a balance of accuracy and speed to evaluate their performance in extracting payment terms from supplier contracts.",
+  "problem_statement": "Can AI extract payment terms from supplier contracts?",
+  "model_used_for_planning": "llama-3.3-70b-versatile"
+}

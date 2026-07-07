@@ -1,0 +1,18 @@
+{
+  "task_type": "summarisation",
+  "models_to_test": [
+    "llama-70b",
+    "qwen-32b",
+    "deepseek-v4"
+  ],
+  "suggested_prompt": "Summarize the medical discharge report: {{input}}",
+  "metrics": [
+    "accuracy",
+    "latency_ms",
+    "coherence"
+  ],
+  "n_samples": 20,
+  "rationale": "I chose llama-70b, qwen-32b, and deepseek-v4 for their strong summarization capabilities, and metrics that evaluate both accuracy and efficiency.",
+  "problem_statement": "Which AI model best summarises medical discharge reports?",
+  "model_used_for_planning": "llama-3.3-70b-versatile"
+}
