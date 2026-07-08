@@ -114,7 +114,7 @@ Return ONLY a valid JSON object with EXACTLY these fields:
 {{
   "task_type": "one of: classification, extraction, summarisation, generation, sql, qa",
   "models_to_test": ["pick exactly 3 from: llama-70b, llama-8b, qwen-32b, deepseek-v4"],
-  "suggested_prompt": "the exact prompt to send each model — use {{{{input}}}} as placeholder for the test sample",
+  "suggested_prompt": "the exact prompt including {{{{input}}}} placeholder. MUST end with an instruction to return ONLY valid JSON with fields relevant to the task_type, no markdown, no explanation.",
   "metrics": ["pick from: json_valid, accuracy, latency_ms, coherence"],
   "n_samples": 20,
   "rationale": "one sentence explaining your model and metric choices"
@@ -124,6 +124,7 @@ Rules:
 - suggested_prompt MUST contain the placeholder {{{{input}}}}
 - Pick models that match the task complexity
 - Return NOTHING outside the JSON object
+- suggested_prompt MUST end with explicit JSON-only output instructions
 """
 
     print(f"\n📋 Generating plan for: '{problem_statement}'")
