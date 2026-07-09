@@ -161,7 +161,7 @@ Rules:
 # --- SAVE PLAN ---
 def save_plan(plan: dict, path: str = "experiments/plan.json"):
     os.makedirs("experiments", exist_ok=True)
-    with open(path, "w") as f:
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(plan, f, indent=2)
     print(f"   💾 Saved → {path}")
 

@@ -1,0 +1,18 @@
+{
+  "task_type": "classification",
+  "models_to_test": [
+    "llama-70b",
+    "llama-8b",
+    "qwen-32b"
+  ],
+  "suggested_prompt": "Classify the following email as spam or not spam: {{input}}. Return {\"classification\": \"spam\" or \"not spam\"}",
+  "metrics": [
+    "accuracy",
+    "latency_ms",
+    "json_valid"
+  ],
+  "n_samples": 20,
+  "rationale": "I chose llama-70b for high accuracy, llama-8b for speed, and qwen-32b for detailed explanations, with metrics to evaluate both performance and output validity.",
+  "problem_statement": "Can AI detect spam emails?",
+  "model_used_for_planning": "llama-3.3-70b-versatile"
+}

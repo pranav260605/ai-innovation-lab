@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body{background:#0D0D1A;color:#F1F5F9;font-family:sans-serif;
+     padding:2rem;max-width:700px;margin:0 auto}
+h1{color:#CBA6F7;font-size:1.3rem}
+.rec{background:#0F2A22;border:1px solid #1A4A32;border-radius:10px;
+     padding:1rem;color:#6EE7C0;margin:1rem 0}
+.chart-box{background:#13132B;border:1px solid #2A2A4A;border-radius:10px;
+     padding:1rem;margin-bottom:1rem}
+</style></head>
+<body>
+<h1>Classification Benchmark</h1>
+<div class="rec">▶ Use llama-8b — 100.0% JSON success at 251ms average latency.</div>
+<div class="chart-box"><canvas id="successChart"></canvas></div>
+<div class="chart-box"><canvas id="latencyChart"></canvas></div>
+<script>
+new Chart(document.getElementById('successChart'), {
+  type: 'bar',
+  data: {
+    labels: ['llama-70b', 'llama-8b', 'qwen-32b'],
+    datasets: [{label: 'JSON Success %',
+      data: [100.0, 100.0, 95.0], backgroundColor: '#534AB7'}]
+  },
+  options: {plugins:{title:{display:true,
+    text:'JSON Success Rate',color:'#F1F5F9'}},
+    scales:{y:{ticks:{color:'#94A3B8'}},
+    x:{ticks:{color:'#94A3B8'}}}}
+});
+new Chart(document.getElementById('latencyChart'), {
+  type: 'bar',
+  data: {
+    labels: ['llama-70b', 'llama-8b', 'qwen-32b'],
+    datasets: [{label: 'Avg Latency (ms)',
+      data: [348.0, 251.0, 938.0], backgroundColor: '#10A37F'}]
+  },
+  options: {plugins:{title:{display:true,
+    text:'Average Latency',color:'#F1F5F9'}},
+    scales:{y:{ticks:{color:'#94A3B8'}},
+    x:{ticks:{color:'#94A3B8'}}}}
+});
+</script>
+</body></html>
