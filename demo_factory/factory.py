@@ -8,7 +8,7 @@ def main(problem):
     print(f"\n🏭 DEMO FACTORY starting for:")
     print(f"   '{problem}'\n")
 
-    # Step 1: Plan
+    # Step 1: Planning
     plan = generate_plan(problem)
     if "error" in plan:
         print("❌ Planning failed. Stopping.")
@@ -16,7 +16,7 @@ def main(problem):
     display_plan(plan)
     save_plan(plan, "experiments/latest_plan.json")
 
-    # Step 2: Run benchmark
+    # Step 2: Running benchmark
     time.sleep(2)
     run("experiments/latest_plan.json")
 
@@ -25,7 +25,7 @@ def main(problem):
         "results/day04_results.csv", plan
     )
 
-    # Step 4: Generate README
+    # Step 4: Generate readme
     generate_readme(plan, recommendation)
 
     print(f"\n✅ DONE! Open output/dashboard.html in your browser.")

@@ -122,6 +122,9 @@ def run(plan_path):
             filled = wrap_for_json(filled, plan["task_type"])
             result = call_model(model_key, filled)
 
+            if model_key == "qwen-32b":
+                print(f"    RAW qwen output: {result['parsed']}")
+
             rows.append({
                 "model":      model_key,
                 "sample_id":  i + 1,
@@ -129,7 +132,7 @@ def run(plan_path):
                 "latency_ms": result["latency_ms"],
                 "tokens":     result["tokens"],
                 "json_valid": result["json_valid"],
-                "output":     str(result["parsed"])[:100],
+                "output": str(result["parsed"]),   # no truncation — needed for consensus checking
             })
 
             print(f"    Sample {i+1:02d}/{len(samples)} "

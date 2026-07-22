@@ -5,7 +5,7 @@
     "llama-8b",
     "qwen-32b"
   ],
-  "suggested_prompt": "Classify the following email as spam or not spam: {{input}}. Return only valid JSON with fields: {\"classification\": \"spam\" or \"not spam\"}.",
+  "suggested_prompt": "Classify the following email as spam or not spam: {{input}}. Return {\"classification\": \"spam\" or \"not spam\"}",
   "metrics": [
     "accuracy",
     "latency_ms",

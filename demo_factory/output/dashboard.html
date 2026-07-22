@@ -14,7 +14,7 @@ h1{color:#CBA6F7;font-size:1.3rem}
 </style></head>
 <body>
 <h1>Classification Benchmark</h1>
-<div class="rec">▶ Use llama-70b — 95.0% consensus agreement at 388ms average latency (100.0% JSON success). 5 of 20 samples had model disagreement — worth manual review.</div>
+<div class="rec">▶ Use llama-8b — 95.0% consensus agreement at 288ms average latency (100.0% JSON success). 20 of 20 samples had model disagreement — worth manual review.</div>
 <div class="note">
   ⚠ No ground truth labels used. "Agreement rate" measures how often
   each model's answer matched the majority vote across all 3 models —
@@ -29,7 +29,7 @@ new Chart(document.getElementById('agreementChart'), {
   data: {
     labels: ['llama-70b', 'llama-8b', 'qwen-32b'],
     datasets: [{label: 'Consensus Agreement %',
-      data: [95.0, 90.0, 90.0], backgroundColor: '#CBA6F7'}]
+      data: [35.0, 95.0, 65.0], backgroundColor: '#CBA6F7'}]
   },
   options: {plugins:{title:{display:true,
     text:'Cross-Model Agreement Rate (no ground truth)',color:'#F1F5F9'}},
@@ -41,7 +41,7 @@ new Chart(document.getElementById('successChart'), {
   data: {
     labels: ['llama-70b', 'llama-8b', 'qwen-32b'],
     datasets: [{label: 'JSON Success %',
-      data: [100.0, 100.0, 100.0], backgroundColor: '#534AB7'}]
+      data: [100.0, 100.0, 95.0], backgroundColor: '#534AB7'}]
   },
   options: {plugins:{title:{display:true,
     text:'JSON Success Rate',color:'#F1F5F9'}},
@@ -53,7 +53,7 @@ new Chart(document.getElementById('latencyChart'), {
   data: {
     labels: ['llama-70b', 'llama-8b', 'qwen-32b'],
     datasets: [{label: 'Avg Latency (ms)',
-      data: [388.0, 216.0, 742.0], backgroundColor: '#10A37F'}]
+      data: [342.0, 288.0, 920.0], backgroundColor: '#10A37F'}]
   },
   options: {plugins:{title:{display:true,
     text:'Average Latency',color:'#F1F5F9'}},
